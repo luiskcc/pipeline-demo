@@ -11,13 +11,15 @@
         <div class="list-item" draggable="true">
           <%= lead.first_name %>
           <%= lead.email %>
+          <%= lead.id %>
+          <%= link_to "View Lead", leads_index_path(lead) %>
         </div>
       </div>
+    <% end %>
       <div class="list" id="Qualification"></div>
       <div class="list" id="NeedAnalysis"></div>
       <div class="list" id="Proposal"></div>
       <div class="list" id="Negotiation"></div>
       <div class="list" id="ClosingDeal"></div>
-    <% end %>
   </div>
 </div>
