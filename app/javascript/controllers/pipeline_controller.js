@@ -69,7 +69,7 @@ export default class extends Controller {
             if (response.ok) {
               console.log(`Lead ${leadId} stage updated to ${stageId}`);
             } else{
-              console.error(`Failed to update lead ${leadId} stage`;)
+              console.error(`Failed to update lead ${leadId} stage`);
             }
           })
           .catch(error => {
@@ -77,7 +77,6 @@ export default class extends Controller {
           })
       
     }
-    
 
 
   }
