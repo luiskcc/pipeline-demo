@@ -39,17 +39,45 @@ export default class extends Controller {
         })
 
         list.addEventListener('drop', function (e) {
+          const leadId = draggedItem.dataset.leadId;
+          const stageId = list.dataset.stageId;
+
+
           this.append(draggedItem);
 
-
-
+          updateLeadStage(leadId, stageId);
 
         });
 
       }
-
-
     }
+
+    function updateLeadStage(leadId, stageId){
+      const url = `/leads/${leadId}/update_stage`;
+      const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
+
+      fetch(url, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRF-Token': csrfToken
+        },
+        body: JSON.stringify({stage_id: stageId})
+      })
+
+          .then(response =>{
+            if (response.ok) {
+              console.log(`Lead ${leadId} stage updated to ${stageId}`);
+            } else{
+              console.error(`Failed to update lead ${leadId} stage`;)
+            }
+          })
+          .catch(error => {
+            console.error(error);
+          })
+      
+    }
+    
 
 
   }
