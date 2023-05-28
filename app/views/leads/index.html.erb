@@ -12,10 +12,11 @@
           <%= lead.first_name %>
           <%= lead.email %>
           <%= lead.id %>
+          <%= link_to "Lead #{lead.first_name}", lead_path(lead) %>
         </div>
       </div>
     <% end %>
-      <div class="list" data-stage-id="prospecting" id="Qualification"></div>
+      <div class="list" data-stage-id="qualification" id="Qualification"></div>
       <div class="list" data-stage-id="need_analysis" id="NeedAnalysis"></div>
       <div class="list" data-stage-id="proposal" id="Proposal"></div>
       <div class="list" data-stage-id="negotiation" id="Negotiation"></div>
