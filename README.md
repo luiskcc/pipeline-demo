@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* RAILS VERSION: 7.0.5
 
-Things you may want to cover:
+* It's a salespipeline that uses AJAX to fetch the data in real time 
+and update the stage of the Lead as it is dragged and dropped through the different stages. 
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- MODEL: Add stage column to the Lead db table rails g migration AddStageToLeads stage:string
+- VIEW: from index.html.erb
+- STYLE.CSS: pipeline.css
+- JS: pipeline_controller.js
+- ROUTES:   resources :leads do
+  member do
+  put 'update_stage'
+  end
+  end
+- CONTROLLER ACTIONS: update_stage 

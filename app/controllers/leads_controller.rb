@@ -10,8 +10,6 @@ class LeadsController < ApplicationController
     render json: {success: true}
   end
 
-
-
   def show
     @lead = Lead.find(params[:id])
   end
