@@ -1,23 +1,24 @@
 
-<h1>Leads#index</h1>
-<p>Find me in app/views/leads/index.html.erb</p>
 <%= stylesheet_link_tag 'pipeline', media: 'all', 'data-turbolinks-track': 'reload' %>
 
 
 <div data-controller="pipeline">
   <div class="lists">
-    <%stages =["prospecting","qualification","need_analysis","proposal","negotiation","closing_deal"] %>
+    <% stages = ['prospecting', 'qualification', 'need_analysis', 'proposal', 'negotiation', 'closing_deal'] %>
     <% stages.each do |stage| %>
-      <div class="list" data-stage-id="<%= stage%>" id="<%=stage.capitalize%>" >
-        <% @leads.select {|lead| lead.stage == stage}.each do |lead|%>
-        <div class="list-item" draggable="true" data-lead-id="<%=lead.id %>">
+      <h1><%= stage.capitalize %>
+      <div class="list" data-stage-id="<%= stage %>" id="<%= stage.capitalize %>">
+        <% @leads.select { |lead| lead.stage == stage }.each do |lead| %>
+          <div class="list-item" draggable="true" data-lead-id="<%= lead.id %>">
             <%= lead.first_name %>
             <%= lead.email %>
             <%= lead.id %>
             <%= link_to "Lead #{lead.first_name}", lead_path(lead) %>
           </div>
-      <% end %>
+        <% end %>
       </div>
-      <%end %>
+      </h1>
+    <% end %>
   </div>
 </div>
+
