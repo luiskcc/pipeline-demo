@@ -6,16 +6,16 @@
 
 <div data-controller="pipeline">
   <div class="lists">
-    <% @leads.select { |lead| lead.stage == "prospecting"}.each do |lead| %>
   <div class="list" data-stage-id="prospecting" id="Prospecting" >
+    <% @leads.select {|lead| lead.stage == "prospecting"}.each do |lead|%>
       <div class="list-item" draggable="true" data-lead-id="<%=lead.id %>">
           <%= lead.first_name %>
           <%= lead.email %>
           <%= lead.id %>
           <%= link_to "Lead #{lead.first_name}", lead_path(lead) %>
         </div>
-      </div>
     <% end %>
+      </div>
       <div class="list" data-stage-id="qualification" id="Qualification"></div>
       <div class="list" data-stage-id="need_analysis" id="NeedAnalysis"></div>
       <div class="list" data-stage-id="proposal" id="Proposal"></div>
