@@ -6,7 +6,7 @@ class LeadsController < ApplicationController
   #PUT /leads/:id/update_stage
   def update_stage
     @lead = Lead.find(params[:id])
-    @lead.update(stage: params[:stage_id])
+    @lead.update_stage_without_creating_new(stage: params[:stage_id])
     render json: {success: true}
   end
 

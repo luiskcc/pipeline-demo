@@ -6,9 +6,9 @@
 
 <div data-controller="pipeline">
   <div class="lists">
-    <% @leads.each do |lead| %>
-      <div class="list" data-stage-id="prospecting" id="Prospecting" >
-        <div class="list-item" draggable="true" data-lead-id="<%=lead.id %>">
+    <% @leads.select { |lead|} %>
+  <div class="list" data-stage-id="prospecting" id="Prospecting" >
+      <div class="list-item" draggable="true" data-lead-id="<%=lead.id %>">
           <%= lead.first_name %>
           <%= lead.email %>
           <%= lead.id %>
