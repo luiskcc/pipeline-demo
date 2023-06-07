@@ -5,6 +5,7 @@
 * RAILS VERSION: 7.0.5
 * bundle install
 * yarn install
+* gitignore
 
 
 
